@@ -1,0 +1,29 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 2128px;
+}
+
+.u-section-1 .u-text-1 {
+  font-family: Epilogue;
+  margin-bottom: 0;
+}
+
+.u-section-1 .u-btn-1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  background-image: none;
+  margin: 55px auto 60px;
+  padding: 26px 98px 27px 97px;
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 3334px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: 53px;
+    padding: 21px 56px 21px 55px;
+  }
+}

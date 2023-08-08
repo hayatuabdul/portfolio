@@ -1,15 +1,25 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 135px;
+  min-height: 210px;
 }
 
 .u-section-1 .u-text-1 {
   font-size: 1.5rem;
-  margin: 43px auto 0 49px;
+  font-family: "Open Sans", sans-serif;
+  margin: 38px 6px 5px;
 }
 
 @media (max-width: 767px) {
   .u-section-1 .u-text-1 {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-text-1 {
+    font-size: 1.125rem;
+    width: auto;
+    font-family: Epilogue;
+    margin: 59px 1px 8px;
   }
 }.u-section-2 .u-sheet-1 {
   min-height: 501px;

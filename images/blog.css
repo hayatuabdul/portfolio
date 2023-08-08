@@ -1,5 +1,5 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 770px;
+  min-height: 893px;
 }
 
 .u-section-1 .u-blog-1 {
@@ -15,7 +15,7 @@
 }
 
 .u-section-1 .u-container-layout-1 {
-  padding: 30px;
+  padding: 27px 30px;
 }
 
 .u-section-1 .u-text-1 {
@@ -43,7 +43,16 @@
 }
 
 .u-section-1 .u-btn-1 {
-  margin: 20px auto 0 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 21px auto 0 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-btn-1 {
+    margin-top: 86px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -58,7 +67,7 @@
     min-height: 693px;
   }
 
-  .u-section-1 .u-image-1 {
-    height: 286px;
+  .u-section-1 .u-btn-1 {
+    margin-top: 42px;
   }
 }
