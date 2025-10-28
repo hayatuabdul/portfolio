@@ -6,156 +6,76 @@
   <meta name="description" content="Hayatu Abdullahi - Data Engineer specializing in scalable data infrastructure, GCP, and data quality frameworks" />
   <title>Hayatu Abdullahi | Data Engineer Portfolio</title>
   <style>
-    /* Base / reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6; color: #333; background: #f5f5f5;
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;background:#f5f5f5}
+    header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000}
+    nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 20px}
+    .logo{color:#fff;font-size:22px;font-weight:700;text-decoration:none}
+    .nav-links{display:flex;list-style:none;gap:26px;align-items:center}
+    .nav-links a{color:#fff;text-decoration:none;font-weight:500;transition:opacity .3s;padding:8px 2px}
+    .nav-links a:hover{opacity:.8}
+    .menu-toggle{display:none;border:0;background:transparent;color:#fff;font-size:28px;line-height:1;cursor:pointer}
 
-    /* Header / Nav */
-    header {
-      background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-      padding: 14px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: sticky; top: 0; z-index: 1000;
-    }
-    nav {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 20px;
-    }
-    .logo { color: #fff; font-size: 22px; font-weight: 700; text-decoration: none; }
-    .nav-links { display: flex; list-style: none; gap: 26px; align-items: center; }
-    .nav-links a {
-      color: #fff; text-decoration: none; font-weight: 500; transition: opacity .3s;
-      padding: 8px 2px;
-    }
-    .nav-links a:hover { opacity: .8; }
-    .menu-toggle {
-      display: none; border: 0; background: transparent; color: #fff;
-      font-size: 28px; line-height: 1; cursor: pointer;
-    }
+    .hero{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:120px 20px 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="rgba(255,255,255,0.05)" width="1200" height="600"/><circle cx="100" cy="100" r="50" fill="rgba(255,255,255,0.1)"/><circle cx="900" cy="400" r="80" fill="rgba(255,255,255,0.08)"/><circle cx="1100" cy="150" r="60" fill="rgba(255,255,255,0.09)"/></svg>') no-repeat center/cover;opacity:.3}
+    .hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+    .hero h1{font-size:56px;margin-bottom:20px;animation:fadeInUp 1s ease}
+    .hero .subtitle{font-size:24px;margin-bottom:15px;opacity:.95;animation:fadeInUp 1s ease .2s both}
+    .hero p{font-size:18px;line-height:1.8;margin-bottom:40px;opacity:.9;animation:fadeInUp 1s ease .4s both}
+    .cta-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;animation:fadeInUp 1s ease .6s both}
+    .btn{padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:16px;transition:all .25s;display:inline-block}
+    .btn-primary{background:#fff;color:#667eea}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.2)}
+    .btn-secondary{background:transparent;color:#fff;border:2px solid #fff}
+    .btn-secondary:hover{background:#fff;color:#667eea}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-      color: #fff; padding: 120px 20px 80px; text-align: center; position: relative; overflow: hidden;
-    }
-    .hero::before{
-      content:""; position:absolute; inset:0;
-      background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="rgba(255,255,255,0.05)" width="1200" height="600"/><circle cx="100" cy="100" r="50" fill="rgba(255,255,255,0.1)"/><circle cx="900" cy="400" r="80" fill="rgba(255,255,255,0.08)"/><circle cx="1100" cy="150" r="60" fill="rgba(255,255,255,0.09)"/></svg>') no-repeat center/cover;
-      opacity:.3;
-    }
-    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-    .hero h1 { font-size: 56px; margin-bottom: 20px; animation: fadeInUp 1s ease; }
-    .hero .subtitle { font-size: 24px; margin-bottom: 15px; opacity:.95; animation: fadeInUp 1s ease .2s both; }
-    .hero p { font-size: 18px; line-height: 1.8; margin-bottom: 40px; opacity:.9; animation: fadeInUp 1s ease .4s both; }
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .section{padding:80px 20px;scroll-margin-top:90px}
+    .section-title{font-size:42px;margin-bottom:20px;color:#667eea;text-align:center}
+    .section-subtitle{font-size:18px;color:#666;text-align:center;margin-bottom:60px;max-width:700px;margin-inline:auto}
 
-    .cta-buttons { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; animation: fadeInUp 1s ease .6s both; }
-    .btn { padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all .25s; display:inline-block; }
-    .btn-primary { background:#fff; color:#667eea; }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,.2); }
-    .btn-secondary { background: transparent; color:#fff; border:2px solid #fff; }
-    .btn-secondary:hover { background:#fff; color:#667eea; }
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin:60px 0}
+    .stat-card{background:#fff;padding:40px 30px;border-radius:12px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s}
+    .stat-card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(102,126,234,.2)}
+    .stat-card h3{font-size:48px;color:#667eea;margin-bottom:10px}
+    .stat-card p{color:#666;font-size:16px}
 
-    @keyframes fadeInUp {
-      from { opacity:0; transform: translateY(30px); }
-      to { opacity:1; transform: translateY(0); }
-    }
+    .skills-section{background:#fff;padding:60px 40px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:40px}
+    .skill-item{background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);padding:20px;border-radius:10px;border-left:4px solid #667eea;transition:all .25s}
+    .skill-item:hover{border-left-width:6px;transform:translateX(5px);background:linear-gradient(135deg,#e9ecef 0%,#dee2e6 100%)}
+    .skill-item h4{color:#667eea;margin-bottom:8px;font-size:18px}
+    .skill-item p{color:#666;font-size:14px;line-height:1.5}
 
-    /* Layout helpers */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 80px 20px; scroll-margin-top: 90px; } /* offset for sticky header */
+    .experience-card{background:#fff;padding:40px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:30px}
+    .experience-card h3{color:#667eea;font-size:26px;margin-bottom:10px}
+    .experience-card .company{color:#764ba2;font-size:18px;font-weight:600;margin-bottom:5px}
+    .experience-card .date{color:#999;font-size:14px;margin-bottom:20px}
+    .experience-card p{color:#555;line-height:1.8;margin-bottom:15px}
+    .experience-card ul{list-style:none;margin-left:0}
+    .experience-card li{color:#555;line-height:1.8;margin-bottom:10px;padding-left:25px;position:relative}
+    .experience-card li::before{content:'▹';position:absolute;left:0;color:#667eea;font-size:20px}
 
-    .section-title { font-size: 42px; margin-bottom: 20px; color:#667eea; text-align:center; }
-    .section-subtitle { font-size: 18px; color:#666; text-align:center; margin-bottom: 60px; max-width: 700px; margin-inline:auto; }
+    .cta-section{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:80px 20px;text-align:center;color:#fff}
+    .cta-section h2{font-size:42px;margin-bottom:20px}
+    .cta-section p{font-size:18px;margin-bottom:40px;opacity:.95}
 
-    /* Stats */
-    .stats-grid {
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap:30px; margin:60px 0;
-    }
-    .stat-card {
-      background:#fff; padding: 40px 30px; border-radius: 12px; text-align:center;
-      box-shadow: 0 4px 20px rgba(0,0,0,.08); transition: transform .3s, box-shadow .3s;
-    }
-    .stat-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(102,126,234,.2); }
-    .stat-card h3 { font-size: 48px; color:#667eea; margin-bottom: 10px; }
-    .stat-card p { color:#666; font-size: 16px; }
+    footer{background:#2d3748;color:#fff;text-align:center;padding:40px 20px}
+    .social-links{display:flex;justify-content:center;gap:30px;margin-top:20px;flex-wrap:wrap}
+    .social-links a{color:#fff;text-decoration:none;font-size:18px;transition:color .25s;display:flex;align-items:center;gap:8px}
+    .social-links a:hover{color:#667eea}
 
-    /* Skills */
-    .skills-section { background:#fff; padding: 60px 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.08); }
-    .skills-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 25px; margin-top: 40px; }
-    .skill-item {
-      background: linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%); padding: 20px; border-radius: 10px;
-      border-left: 4px solid #667eea; transition: all .25s;
-    }
-    .skill-item:hover { border-left-width: 6px; transform: translateX(5px); background: linear-gradient(135deg,#e9ecef 0%,#dee2e6 100%); }
-    .skill-item h4 { color:#667eea; margin-bottom: 8px; font-size: 18px; }
-    .skill-item p { color:#666; font-size: 14px; line-height: 1.5; }
-
-    /* Experience */
-    .experience-card {
-      background:#fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.08); margin-bottom: 30px;
-    }
-    .experience-card h3 { color:#667eea; font-size: 26px; margin-bottom: 10px; }
-    .experience-card .company { color:#764ba2; font-size: 18px; font-weight: 600; margin-bottom: 5px; }
-    .experience-card .date { color:#999; font-size: 14px; margin-bottom: 20px; }
-    .experience-card p { color:#555; line-height: 1.8; margin-bottom: 15px; }
-    .experience-card ul { list-style: none; margin-left: 0; }
-    .experience-card li {
-      color:#555; line-height: 1.8; margin-bottom: 10px; padding-left: 25px; position: relative;
-    }
-    .experience-card li::before { content:'▹'; position: absolute; left: 0; color:#667eea; font-size: 20px; }
-
-    /* Blog */
-    .blog-grid {
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 24px;
-    }
-    .post {
-      background:#fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.08);
-      display:flex; flex-direction: column; transition: transform .25s, box-shadow .25s;
-    }
-    .post:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(102,126,234,.18); }
-    .post-header { padding: 18px 20px 0; }
-    .post-tag { display:inline-block; font-size: 12px; color:#764ba2; background: #f1e9ff; padding: 4px 10px; border-radius: 999px; margin-bottom: 10px; }
-    .post-title { font-size: 20px; color:#2d2d2d; margin-bottom: 8px; }
-    .post-meta { font-size: 13px; color:#777; margin-bottom: 10px; }
-    .post-body { padding: 0 20px 20px; color:#555; }
-    .post-footer { margin-top: auto; padding: 16px 20px; border-top: 1px solid #eee; display:flex; justify-content: space-between; align-items: center; }
-    .post a.read { text-decoration: none; font-weight: 600; color:#667eea; }
-    .post a.read:hover { text-decoration: underline; }
-    .post time { font-size: 12px; color:#888; }
-
-    /* CTA / Footer */
-    .cta-section {
-      background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-      padding: 80px 20px; text-align: center; color:#fff;
-    }
-    .cta-section h2 { font-size: 42px; margin-bottom: 20px; }
-    .cta-section p { font-size: 18px; margin-bottom: 40px; opacity:.95; }
-
-    footer { background:#2d3748; color:#fff; text-align:center; padding: 40px 20px; }
-    .social-links { display:flex; justify-content:center; gap:30px; margin-top: 20px; flex-wrap: wrap; }
-    .social-links a { color:#fff; text-decoration: none; font-size: 18px; transition: color .25s; display:flex; align-items: center; gap: 8px; }
-    .social-links a:hover { color:#667eea; }
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .menu-toggle { display: block; }
-      .nav-links {
-        position: absolute; right: 20px; top: 64px; background: rgba(0,0,0,.2);
-        backdrop-filter: blur(10px);
-        display: none; flex-direction: column; gap: 10px; padding: 14px; border-radius: 12px; min-width: 180px;
-      }
-      .nav-links a { padding: 8px 10px; border-radius: 8px; }
-      .nav-links a:hover { background: rgba(255,255,255,.15); }
-      .nav-links.open { display: flex; }
-      .hero h1 { font-size: 38px; }
-      .hero .subtitle { font-size: 20px; }
-      .section-title { font-size: 32px; }
+    @media (max-width:900px){
+      .menu-toggle{display:block}
+      .nav-links{position:absolute;right:20px;top:64px;background:rgba(0,0,0,.2);backdrop-filter:blur(10px);display:none;flex-direction:column;gap:10px;padding:14px;border-radius:12px;min-width:180px}
+      .nav-links a{padding:8px 10px;border-radius:8px}
+      .nav-links a:hover{background:rgba(255,255,255,.15)}
+      .nav-links.open{display:flex}
+      .hero h1{font-size:38px}
+      .hero .subtitle{font-size:20px}
+      .section-title{font-size:32px}
     }
   </style>
 </head>
@@ -169,7 +89,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#blog">Blog</a></li>
+        <!-- CHANGED: Blog now points to your GitHub Pages URL -->
+        <li><a href="https://hayatuabdul.github.io/portfolio/blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -222,12 +143,11 @@
           foundation for enterprise-wide data governance and validation.
         </p>
         <ul>
-          <li>Designed end-to-end data quality framework using Great Expectations, Python, and Spark on GCP –
-            validating 1.36 trillion records across 70+ datasets for regulatory compliance</li>
-          <li>Optimized pipeline performance by 60% on heavy assets (250M+ rows) through advanced Spark partitioning and query optimization</li>
-          <li>Implemented real-time DQ monitoring using Kafka and CloudSQL metadata, reducing failure investigation time by 40%</li>
-          <li>Built cloud-native infrastructure on GCP (BigQuery, Dataproc, Cloud Composer) with automated CI/CD via Jenkins</li>
-          <li>Partnered with analysts, product, and architects to embed data governance standards</li>
+          <li>Designed end-to-end data quality framework using Great Expectations, Python, and Spark on GCP – validating 1.36T+ records across 70+ datasets</li>
+          <li>Cut heavy-job runtimes by ~60% via partitioning and shuffle hygiene on 250M+ row assets</li>
+          <li>Real-time DQ monitoring with Kafka + CloudSQL metadata, reducing investigation time by ~40%</li>
+          <li>GCP infra (BigQuery, Dataproc, Composer) with CI/CD via Jenkins</li>
+          <li>Partnered across analysts/product/architecture to embed governance</li>
         </ul>
       </div>
 
@@ -235,14 +155,12 @@
         <h3>Data Engineering Associate</h3>
         <div class="company">Digital Futures</div>
         <div class="date">June 2023 - December 2023 | London, UK</div>
-        <p>
-          Developed production-grade data pipelines and infrastructure for multiple client environments, gaining hands-on experience with modern data engineering practices.
-        </p>
+        <p>Built production-grade pipelines and infra across client envs with modern DE practices.</p>
         <ul>
-          <li>Built PySpark ETL pipelines improving throughput by 30% with 99% accuracy across datasets</li>
-          <li>Deployed cloud infrastructure with Terraform and CI/CD workflows</li>
-          <li>Implemented GDPR-aligned governance and security practices</li>
-          <li>Conducted 25+ technical interviews and mentored juniors on Python/SQL/pipeline design</li>
+          <li>PySpark ETL pipelines: +30% throughput, ~99% accuracy</li>
+          <li>Terraform + CI/CD deployments</li>
+          <li>GDPR-aligned governance and security</li>
+          <li>25+ tech interviews; mentored juniors on Python/SQL/pipeline design</li>
         </ul>
       </div>
     </div>
@@ -255,34 +173,72 @@
 
       <div class="skills-section">
         <div class="skills-grid">
-          <div class="skill-item">
-            <h4>🐍 Languages</h4>
-            <p>Python, SQL, Scala, PySpark – production-grade data engineering code</p>
-          </div>
-          <div class="skill-item">
-            <h4>☁️ Cloud Platform (GCP)</h4>
-            <p>BigQuery, Dataproc, Cloud Storage, Cloud Composer, CloudSQL</p>
-          </div>
-          <div class="skill-item">
-            <h4>⚙️ Data Processing</h4>
-            <p>Apache Spark (3.x), Airflow, ETL/ELT, Delta Lake</p>
-          </div>
-          <div class="skill-item">
-            <h4>🏗️ Infrastructure as Code</h4>
-            <p>Terraform, Jenkins CI/CD, Maven, Git</p>
-          </div>
-          <div class="skill-item">
-            <h4>✅ Data Quality</h4>
-            <p>Great Expectations, custom validations, metadata-driven controls</p>
-          </div>
-          <div class="skill-item">
-            <h4>📊 Data Architecture</h4>
-            <p>Modeling, warehouse design, batch/streaming pipelines</p>
-          </div>
-          <div class="skill-item">
-            <h4>🔄 Real-time Processing</h4>
-            <p>Kafka, event-driven architectures</p>
-          </div>
-          <div class="skill-item">
-            <h4>🔒 Data Governance</h4>
-            <p>GDPR, security best pra
+          <div class="skill-item"><h4>🐍 Languages</h4><p>Python, SQL, Scala, PySpark – production-grade DE</p></div>
+          <div class="skill-item"><h4>☁️ GCP</h4><p>BigQuery, Dataproc, GCS, Composer, CloudSQL</p></div>
+          <div class="skill-item"><h4>⚙️ Processing</h4><p>Spark (3.x), Airflow, ETL/ELT, Delta</p></div>
+          <div class="skill-item"><h4>🏗️ IaC</h4><p>Terraform, Jenkins, Maven, Git</p></div>
+          <div class="skill-item"><h4>✅ Data Quality</h4><p>Great Expectations, custom validations</p></div>
+          <div class="skill-item"><h4>📊 Architecture</h4><p>Modeling, warehouse design, batch/stream</p></div>
+          <div class="skill-item"><h4>🔄 Real-time</h4><p>Kafka, event-driven</p></div>
+          <div class="skill-item"><h4>🔒 Governance</h4><p>GDPR, security, observability</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- No in-page blog section now; Blog nav goes to external /portfolio/blog page -->
+
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>Let's Build Something Together</h2>
+      <p>
+        I'm always interested in discussing data engineering challenges and opportunities.
+        Whether you're building new infra or optimizing pipelines, let's connect.
+      </p>
+      <div class="cta-buttons">
+        <a href="mailto:hayatuabdul917@yahoo.com" class="btn btn-primary">Email Me</a>
+        <a href="https://www.linkedin.com/in/hayatuabdul/" target="_blank" class="btn btn-secondary" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Connect With Me</h3>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/hayatuabdul/" target="_blank" rel="noopener"><span>LinkedIn</span></a>
+      <a href="https://github.com/hayatuabdul" target="_blank" rel="noopener"><span>GitHub</span></a>
+      <a href="mailto:hayatuabdul917@yahoo.com"><span>Email</span></a>
+    </div>
+    <p style="margin-top:30px;opacity:.7;">© 2025 Hayatu Abdullahi. Data Engineer.</p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('navLinks');
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click',()=>{
+        if(nav.classList.contains('open')){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+
+    // Optional: if you clone this elsewhere, auto-adjust Blog link for non-GitHub environments.
+    (function(){
+      const blogLink = [...document.querySelectorAll('.nav-links a')].find(a => a.textContent.trim()==='Blog');
+      if(!blogLink) return;
+      const onGitHubPages = location.hostname.endsWith('github.io');
+      if(!onGitHubPages){
+        // fallback for local dev or other hosts
+        blogLink.href = '/blog';
+      }
+    })();
+  </script>
+</body>
+</html>
