@@ -242,7 +242,7 @@
                     </div>
                     <h2>Why Data Quality Can't Be an Afterthought Anymore</h2>
                     <p>
-                        After validating over a trillion records at HSBC, I've learned one thing: bad data quality doesn't just slow you down—it breaks everything downstream. Here's what nobody tells you about building DQ frameworks that actually work in production.
+                        After validating over a trillion records at HSBC, I've learned one thing: bad data quality doesn't just slow you down - it breaks everything downstream. Here's what nobody tells you about building DQ frameworks that actually work in production.
                     </p>
                     <p style="margin-top: 15px; color: #555; font-style: italic;">
                         The moment your pipeline hits production is when you realize tests in dev mean nothing. Real data is messy, schemas drift, and that "one-off exception" happens every single day. I've seen pipelines that worked perfectly for months suddenly fail because a vendor changed a date format without warning.
@@ -262,7 +262,7 @@
                         Everyone's rushing to build AI agents and LLM applications, but here's the uncomfortable truth: if your data quality is garbage, your AI will be worse. I learned this the hard way experimenting with LLM-powered data quality classification.
                     </p>
                     <p style="margin-top: 15px; color: #555; font-style: italic;">
-                        We tried using GPT to automatically classify data quality rules. It worked brilliantly—until it didn't. The model kept hallucinating patterns that didn't exist in our data because the training examples had inconsistencies we didn't catch. Garbage in, garbage out isn't just a saying; it's physics for data systems.
+                        We tried using GPT to automatically classify data quality rules. It worked brilliantly - until it didn't. The model kept hallucinating patterns that didn't exist in our data because the training examples had inconsistencies we didn't catch. Garbage in, garbage out isn't just a saying; it's physics for data systems.
                     </p>
                 </div>
             </div>
@@ -276,10 +276,10 @@
                     </div>
                     <h2>How I Cut Spark Runtime by 60% (And You Can Too)</h2>
                     <p>
-                        Processing 250 million rows shouldn't take 4 hours. Here's exactly how I optimized our heaviest Spark jobs at HSBC—no magic, just proper partitioning, broadcast joins, and understanding what's actually happening under the hood.
+                        Processing 250 million rows shouldn't take 4 hours. Here's exactly how I optimized our heaviest Spark jobs at HSBC - no magic, just proper partitioning, broadcast joins, and understanding what's actually happening under the hood.
                     </p>
                     <p style="margin-top: 15px; color: #555; font-style: italic;">
-                        The breakthrough came when I stopped treating Spark like a black box. Execution plans don't lie—they'll show you exactly where you're shuffling 50GB of data because someone wrote a GROUP BY on an unpartitioned column. One repartition() in the right place saved us 2.5 hours per run.
+                        The breakthrough came when I stopped treating Spark like a black box. Execution plans don't lie - they'll show you exactly where you're shuffling 50GB of data because someone wrote a GROUP BY on an unpartitioned column. One repartition() in the right place saved us 2.5 hours per run.
                     </p>
                 </div>
             </div>
@@ -293,10 +293,10 @@
                     </div>
                     <h2>Delta Lake Isn't Just for Data Scientists</h2>
                     <p>
-                        I was skeptical about Delta Lake at first. "Just another format," I thought. Then I had to debug why our consistency checks were failing across Bronze and Gold layers. Turns out, ACID transactions in data lakes aren't just nice to have—they're essential.
+                        I was skeptical about Delta Lake at first. "Just another format," I thought. Then I had to debug why our consistency checks were failing across Bronze and Gold layers. Turns out, ACID transactions in data lakes aren't just nice to have - they're essential.
                     </p>
                     <p style="margin-top: 15px; color: #555; font-style: italic;">
-                        The game-changer was time travel. When stakeholders asked "what changed between yesterday and today that broke our report?" I could actually show them—row by row, with version history. Try doing that with plain Parquet files. Delta turned our data lake from a dumping ground into an actual reliable source of truth.
+                        The game-changer was time travel. When stakeholders asked "what changed between yesterday and today that broke our report?" I could actually show them - row by row, with version history. Try doing that with plain Parquet files. Delta turned our data lake from a dumping ground into an actual reliable source of truth.
                     </p>
                 </div>
             </div>
@@ -344,7 +344,7 @@
                     </div>
                     <h2>Kafka for Data Engineers: Beyond the Marketing Hype</h2>
                     <p>
-                        We added Kafka to stream real-time data quality metrics. It worked, but not for the reasons the documentation suggests. Here's what Kafka is actually good for in data engineering—and when you absolutely don't need it.
+                        We added Kafka to stream real-time data quality metrics. It worked, but not for the reasons the documentation suggests. Here's what Kafka is actually good for in data engineering - and when you absolutely don't need it.
                     </p>
                     <p style="margin-top: 15px; color: #555; font-style: italic;">
                         Real talk: most "real-time" requirements aren't actually real-time. Business users say they need live data, but what they really mean is "faster than the 6-hour batch we have now." Kafka is incredible when you genuinely need sub-second latency. For everything else, micro-batching with Spark Structured Streaming is simpler.
